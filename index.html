@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Soon - Website Under Construction Template</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Favicons -->
+  <link href="img/favicon.png" rel="icon">
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+    Template Name: Soon
+    Template URL: https://templatemag.com/soon-website-under-construction-template/
+    Author: TemplateMag.com
+    License: https://templatemag.com/license/
+  ======================================================= -->
+</head>
+
+<body>
+
+  <div id="h">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <div class="screen">
+            <h2 style="font-weight: 600;">Land&Globe</h2>
+            <div class="name">
+              <img src="img/Bloc_Virades_Espoir-Horizontal-Blanc-01.png" class="aligncenter" width="50%">
+            </div>
+            <h5>
+              Au vu du contexte actuel, il nous est difficile d’utiliser le ballon ovale mais nos jambes sont toujours de la partie ! <br/>
+              Pour soutenir la lutte contre la <b style="color:#0b8674">mucoviscidose</b> nous lançons un challenge : l’équipe féminine de l’Avenir Aturin vous propose, en collaboration avec les <b style="color:#0b8674">Virades de l’Espoir</b>, de faire un <b>tour du monde</b> avant la journée nationale du <i style="font-size: 20px;">26 septembre 2021</i>. <br/>
+              <br/>Comment ?
+              <br/>Avec une <b>paire de basket</b> et un peu de <b>motivation</b>! <br/>
+              Alors, prêt à relever le défi ?
+            </h5>
+            <hr/>
+            <div class="countdown-header">
+              <h3>Je contribue à la cause</h3>
+              <script type="text/javascript">
+                // var mydata = require("./km.json");
+                $.getJSON("km.json", function(json){
+                  console.log(json)
+                })
+                // alert(mydata.km)
+                
+                var x=0 
+                function compteur() 
+                { 
+                  // km =parseInt(document.getElementById('km').value);
+                  x = x+1;
+                  document.getElementById('nb').innerHTML = x; 
+                }
+              </script>               
+                
+              <p>Déjà <b id='nb'>0</b> km parcourus !! </p> 
+              <input type="number" id="km" name="km" min="1" max="50" placeholder="1">
+              <input type="button" onclick="compteur()" value="Ajouter mes kilomètres" /> 
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--/row-->
+    </div>
+    <!--/container-->
+  </div>
+  <!--/H-->
+
+  <!-- JavaScript Libraries -->
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+  <script src="lib/php-mail-form/validate.js"></script>
+  <script src="lib/countdown/jquery.plugin.min.js"></script>
+  <script src="lib/countdown/jquery.countdown.min.js"></script>
+
+  <!-- Template Main Javascript File -->
+  <script src="js/main.js"></script>
+
+</body>
+</html>
