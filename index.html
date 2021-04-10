@@ -53,8 +53,8 @@
   }
 
   function write_json(){
-    var to_add = document.getElementById('km').innerHTML;
-    console.log("INPUT : " + km);
+    var to_add = typeof(document.getElementById('km').innerHTML);
+    console.log("WRITE : " + to_add);
     
 
     // request.open('SET', requestURL);
