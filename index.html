@@ -54,18 +54,37 @@
               <h3>Je contribue à la cause</h3>
               <script type="text/javascript">
                 // var mydata = require("./km.json");
-                $.getJSON("km.json", function(json){
-                  console.log(json)
-                })
-                // alert(mydata.km)
-                
-                var x=0 
-                function compteur() 
-                { 
-                  // km =parseInt(document.getElementById('km').value);
-                  x = x+1;
-                  document.getElementById('nb').innerHTML = x; 
+                function compteur(){
+                  var requestURL = 'https://github.com/ycoussemacker/Soon/blob/630062d39e5523796e6a04715dc39b07c6d05a4f/km.json'
+
+                  var request = new XMLHttpRequest();
+
+                  request.open('GET', requestURL);
+
+                  request.responseType = 'json';
+                  request.send();
+
+                  request.onload = function() {
+                    var km = request.response.km;
+                    console.log(km);
+                    document.getElementById('nb').innerHTML = km; 
+                  }
                 }
+                
+
+
+                // $.getJSON("km.json", function(json){
+                //   console.log(json)
+                // })
+                // // alert(mydata.km)
+                
+                // var x=0 
+                // function compteur() 
+                // { 
+                //   // km =parseInt(document.getElementById('km').value);
+                //   x = x+1;
+                //   document.getElementById('nb').innerHTML = x; 
+                // }
               </script>               
                 
               <p>Déjà <b id='nb'>0</b> km parcourus !! </p> 
