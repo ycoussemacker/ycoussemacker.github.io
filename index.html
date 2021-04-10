@@ -31,6 +31,31 @@
   ======================================================= -->
 </head>
 
+
+<script type="text/javascript">
+  // var mydata = require("./km.json");
+
+  var requestURL = 'https://ycoussemacker.github.io/km.json'
+
+  var request = new XMLHttpRequest();
+
+  function read_json(){
+    
+
+    request.open('GET', requestURL);
+
+    request.responseType = 'json';
+    request.send();
+
+    request.onload = function() {
+      var km = request.response.km;
+      console.log(km);
+      document.getElementById('nb').innerHTML = km; 
+    }
+  }
+</script>
+
+
 <body onload="read_json()">
 
   <div id="h">
@@ -51,48 +76,10 @@
             </h5>
             <hr/>
             <div class="countdown-header">
-              <h3>Je contribue à la cause</h3>
-              <script type="text/javascript">
-                // var mydata = require("./km.json");
-
-                var requestURL = 'https://ycoussemacker.github.io/km.json'
-
-                var request = new XMLHttpRequest();
-
-                function read_json(){
-                  
-
-                  request.open('GET', requestURL);
-
-                  request.responseType = 'json';
-                  request.send();
-
-                  request.onload = function() {
-                    var km = request.response.km;
-                    console.log(km);
-                    document.getElementById('nb').innerHTML = km; 
-                  }
-                }
-                
-
-
-                // $.getJSON("km.json", function(json){
-                //   console.log(json)
-                // })
-                // // alert(mydata.km)
-                
-                // var x=0 
-                // function compteur() 
-                // { 
-                //   // km =parseInt(document.getElementById('km').value);
-                //   x = x+1;
-                //   document.getElementById('nb').innerHTML = x; 
-                // }
-              </script>               
-                
+              <h3>Je contribue à la cause</h3>            
               <p>Déjà <b id='nb'>0</b> km parcourus !! </p> 
               <input type="number" id="km" name="km" min="1" max="50" placeholder="1">
-              <input type="button" onclick="compteur()" value="Ajouter mes kilomètres" /> 
+              <input type="button" onclick="read_json()" value="Ajouter mes kilomètres" /> 
             </div>
           </div>
         </div>
