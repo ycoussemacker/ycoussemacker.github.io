@@ -39,19 +39,31 @@
 
   var request = new XMLHttpRequest();
 
-  function read_json(){
-    
+  var km = 0;
 
+  function read_json(){   
     request.open('GET', requestURL);
-
     request.responseType = 'json';
     request.send();
-
     request.onload = function() {
-      var km = request.response.km;
+      km = request.response.km;
       console.log(km);
       document.getElementById('nb').innerHTML = km; 
     }
+  }
+
+  function write_json(){
+    request.open('SET', requestURL);
+    request.
+    request.send();
+    request.onload = function() {
+      var to_add = document.getElementById('km').innerHTML
+      request.response.km = km + to_add;
+      console.log(to_add);
+
+      break;
+    }
+    read_json();
   }
 </script>
 
