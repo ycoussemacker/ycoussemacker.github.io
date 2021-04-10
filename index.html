@@ -54,7 +54,6 @@
 
   function write_json(){
     request.open('SET', requestURL);
-    request.
     request.send();
     request.onload = function() {
       var to_add = document.getElementById('km').innerHTML
@@ -91,7 +90,7 @@
               <h3>Je contribue à la cause</h3>            
               <p>Déjà <b id='nb'>0</b> km parcourus !! </p> 
               <input type="number" id="km" name="km" min="1" max="50" placeholder="1">
-              <input type="button" onclick="read_json()" value="Ajouter mes kilomètres" /> 
+              <input type="button" onclick="write_json()" value="Ajouter mes kilomètres" /> 
             </div>
           </div>
         </div>
