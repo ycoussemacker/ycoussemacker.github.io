@@ -31,7 +31,7 @@
   ======================================================= -->
 </head>
 
-<body>
+<body onload="read_json()">
 
   <div id="h">
     <div class="container">
@@ -54,10 +54,13 @@
               <h3>Je contribue à la cause</h3>
               <script type="text/javascript">
                 // var mydata = require("./km.json");
-                function compteur(){
-                  var requestURL = 'https://ycoussemacker.github.io/km.json'
 
-                  var request = new XMLHttpRequest();
+                var requestURL = 'https://ycoussemacker.github.io/km.json'
+
+                var request = new XMLHttpRequest();
+
+                function read_json(){
+                  
 
                   request.open('GET', requestURL);
 
