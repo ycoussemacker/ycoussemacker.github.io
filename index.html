@@ -55,7 +55,7 @@
   function write_json(){
     var to_add = parseInt(document.getElementById('km').value);
     km = km + to_add;
-    // console.log("Write : " + km);
+    console.log("Write : " + km);
     var data = {"km" : km};
     var jsonData = JSON.stringify(data);
 
@@ -63,9 +63,10 @@
     var a = document.createElement("a");
     var file = new Blob([jsonData], {type: 'text/plain'});
     a.href = URL.createObjectURL(file);
-    a.download = requestURL;
+    a.replaceWith= requestURL;
     a.click();
     URL.revokeObjectURL(a.href)
+    read_json();
 
     // request.open('SET', requestURL);
     // request.send();
