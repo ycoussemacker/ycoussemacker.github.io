@@ -216,7 +216,7 @@ input {
   background-color: #001829;
   text-align: center;
   background-attachment: relative;
-  background-position: top center;
+  background-position: center center;
   height: 100%;
   /* width: 100%; */
   color: #000000;
@@ -227,7 +227,7 @@ input {
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;
+  background-size: contain;
   /* padding-top : 3%; */
   /* padding-bottom : 10%; */
 }
