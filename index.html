@@ -41,6 +41,8 @@
 
   var km = 0;
 
+  var i = 0 ;
+
   function read_json(){   
     request.open('GET', requestURL);
     request.responseType = 'json';
@@ -49,6 +51,38 @@
       km = request.response.km;
       console.log(km);
       document.getElementById('nb').innerHTML = km; 
+
+      // progression de la barre
+      if(i==0){
+        i = 1;
+        var elem = document.getElementById("myBar");
+
+        let percentage_max = 100;
+        if(km<40075){
+          percentage_max = (km/40075)*100;
+        } 
+        // console.log(percentage_max)
+        
+        var nb_step = 30
+
+        let step = percentage_max / nb_step;
+        var width = 0;
+
+        var id = setInterval(frame, nb_step);      
+        // console.log(width)
+        function frame() {
+          if (width >= percentage_max) {
+            // clearInterval(id);
+            i = 0;
+          } else {
+            width += step;
+            elem.style.width = width.toString() + "%";
+            console.log(width)
+            
+          }
+        }
+      }
+      
     }
   }
 
@@ -81,12 +115,15 @@
     if (i == 0) {
       i = 1;
       var elem = document.getElementById("myBar");
-      var percentage_max = (km/40075).toString();
-      var step = percentage_max / 10;
+
+      let percentage_max = (km*100/40075);
+      console.log(percentage_max)
+
+      let step = percentage_max / 10;
       var width = 0;
 
-      var id = setInterval(frame, 10);      
-
+      // var id = setInterval(frame, 10);      
+      // console.log(width)
       function frame() {
         if (width >= percentage_max) {
           clearInterval(id);
@@ -94,6 +131,8 @@
         } else {
           width += step;
           elem.style.width = step.toString() + "%";
+          console.log(width)
+          
         }
       }
     }
