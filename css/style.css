@@ -212,10 +212,10 @@ input {
 }
 
 #h {
-  background: url(../img/earth_gif.gif) no-repeat center top;
+  background: url(../img/earth_gif.gif) no-repeat center center;
   background-color: #001829;
   text-align: center;
-  background-attachment: relative;
+  background-attachment: fixed;
   background-position: center center;
   height: 100%;
   /* width: 100%; */
