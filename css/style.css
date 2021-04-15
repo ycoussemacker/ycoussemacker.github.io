@@ -281,6 +281,7 @@ input {
   font-size: 60px;
   color: #ffffff;
   letter-spacing: 2px;
+  padding-bottom : 10px;
 }
 
 .countdown-header p b {
