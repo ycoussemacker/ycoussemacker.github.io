@@ -42,6 +42,38 @@
   var km = 0;
 
   var i = 0 ;
+  function progress_bar(){
+    // progression de la barre
+    if(i==0){
+      i = 1;
+      var elem = document.getElementById("myBar");
+
+      let percentage_max = 100;
+      if(km<40075){
+        percentage_max = (km/40075)*100;
+      } 
+      console.log(percentage_max)
+      
+      var nb_step = 30
+
+      let step = percentage_max / nb_step;
+      var width = 0;
+
+      var id = setInterval(frame, nb_step);      
+      // console.log(width)
+      function frame() {
+        if (width >= percentage_max) {
+          clearInterval(id);
+          i = 0;
+        } else {
+          width += step;
+          elem.style.width = width.toString() + "%";
+          // console.log(width)
+          
+        }
+      }
+    }
+  }
 
   function read_json(){   
     request.open('GET', requestURL);
@@ -52,39 +84,12 @@
       console.log(km);
       document.getElementById('nb').innerHTML = km; 
 
-      // progression de la barre
-      if(i==0){
-        i = 1;
-        var elem = document.getElementById("myBar");
-
-        let percentage_max = 100;
-        if(km<40075){
-          percentage_max = (km/40075)*100;
-        } 
-        // console.log(percentage_max)
-        
-        var nb_step = 30
-
-        let step = percentage_max / nb_step;
-        var width = 0;
-
-        var id = setInterval(frame, nb_step);      
-        // console.log(width)
-        function frame() {
-          if (width >= percentage_max) {
-            // clearInterval(id);
-            i = 0;
-          } else {
-            width += step;
-            elem.style.width = width.toString() + "%";
-            console.log(width)
-            
-          }
-        }
-      }
+      progress_bar();
       
     }
   }
+
+  
 
   function write_json(){
     var to_add = parseInt(document.getElementById('km').value);
@@ -108,34 +113,6 @@
     //   request.response.km = km + to_add;
     // }
     // read_json();
-  }
-
-  var i = 0;
-  function move() {
-    if (i == 0) {
-      i = 1;
-      var elem = document.getElementById("myBar");
-
-      let percentage_max = (km*100/40075);
-      console.log(percentage_max)
-
-      let step = percentage_max / 10;
-      var width = 0;
-
-      // var id = setInterval(frame, 10);      
-      // console.log(width)
-      function frame() {
-        if (width >= percentage_max) {
-          clearInterval(id);
-          i = 0;
-        } else {
-          width += step;
-          elem.style.width = step.toString() + "%";
-          console.log(width)
-          
-        }
-      }
-    }
   }
 </script>
 
