@@ -350,12 +350,14 @@ input {
 #myProgress {
   width: 100%;
   background-color: grey;
+  border-radius : 15px;
 }
 
 #myBar {
   width: 1%;
   height: 30px;
   background-color: #0b8674;
+  border-radius : 15px;
 }
 
 /* Grey Section */
